@@ -1,5 +1,14 @@
 Arrays & hashing. NeetCode section + Skiena Lectures 1–6 (Ch.1–3: Intro to algorithms → Asymptotic notation → Logarithms → Elementary data structures → Dictionary data structures → Hashing). Write your first patterns/ notes. DDIA ch. 1.
 
+# Pattern:
+- When problem clear demands search, goes for hash table if pred / successor isn't that important or can be derived via some trick.
+- From the hash tables, start with set to clear out the data input might be a good advantage, specially if the problems do not care about the repeated element
+- Search for O(1) alternatives before using DS (e.g.: in one problem the trick was to get a range / a difference before doing something else. This reduces the solution from N * LogN to LogN)
+- Lists are for when appending are relevant but first check if I can use some hash table like dictionaries and even leverage the keys of list entries (given there are not that much keys or I can reduce the key amount before adding the keys). Afterwards, I gain search for O(1)
+- Keep in mind the sorted DS might be a negative asset (for some operations like search, it usually improves, but the expense is insert, delete, etc.). It's all about trade-offs
+
+
+
 # Summary:
 
 ## Asymptotic Notation 
@@ -28,17 +37,18 @@ Search, Insert, Delete, Mix, Max, Logical Predecessor / Successor
 - Fixed size, low overhead, a full block of memory dedicated for it
 - Less flexible but very memory efficient
 - Demands a full block of memory beforehand
-- **In python tuples**
+
 
 ### Dynamic Arrays
 - Doubles it size (new alloc) every time the base array gets full.
 - At N, as it grows in log N, the whole amount RAM allocated is just 2 * N
+- **In python tuples and lists**
 
 ## (double) Linked Lists
 - A collection of elements pointing to the next
 - Also pointing to the previous, in the case of double
 - Discrete (flexible) DS element
-- **In python lists**
+- **Python does not exposes it natively, available via collections.deque**
 
 ## Stack & Queue
 - Types of array or linked list
